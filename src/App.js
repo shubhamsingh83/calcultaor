@@ -16,12 +16,17 @@ function App() {
 
   const calculate = ()=>{
     try{
+
+      if(input.includes("0/0")){
+        setOutput("NaN");
+        return;
+      }
       if(input.includes("/0")){
         setOutput("Infinity");
         return;
       }
 
-      if(input.trim === ""){
+      if (input.trim() === "" || input.includes("=")) {
         setOutput("Error");
         return;
       }
